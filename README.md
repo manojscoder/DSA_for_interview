@@ -12,10 +12,13 @@ This repository is created to help aspiring software engineers and developers pr
 The problems in this repository are categorized into the following sections:
 
 - Array
+- Two pointers
+- Sliding Window
 - Linked Lists
 - Trees and Graphs
 - Sorting and Searching
 - Dynamic Programming
+- Trie
 - Backtracking
 - Bit Manipulation
 - Math and Geometry
