@@ -1,18 +1,11 @@
 # Data Structures and Algorithms Interview Preparation
 
-This repository contains solutions to various Data Structures and Algorithms (DSA) problems commonly asked in technical interviews. The solutions are implemented in [programming language], providing explanations and insights into problem-solving strategies.
-
-## Table of Contents
-
-- [About](#about)
-- [Problem Categories](#problem-categories)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
+This repository contains solutions to various Data Structures and Algorithms (DSA) problems commonly asked in technical interviews. The solutions are implemented in [Java, Python] and insights into problem-solving strategies.
 
 ## About
 
 This repository is created to help aspiring software engineers and developers prepare for technical interviews. It includes solutions to problems from platforms like LeetCode, HackerRank, and Codeforces, organized by problem categories for easy navigation and reference.
+
 
 ## Problem Categories
 
@@ -26,22 +19,29 @@ The problems in this repository are categorized into the following sections:
 - Backtracking
 - Bit Manipulation
 - Math and Geometry
-- System Design (optional)
 
-Each category contains solutions to multiple problems with detailed explanations and complexity analysis.
+Each category contains solutions to multiple problems with complexity analysis.
 
-## Folder Structure
 
-The repository follows a structured format to organize problem solutions:
+## Contributing
 
-- Arrays_and_Strings
-  - Two_Sum
-    - solution.py
-  - Container_With_Most_Water
-    - solution.java
-    - explanation.md
-  - Longest_Substring_Without_Repeating_Characters
-    - solution.cpp
-    - README.md
+Contributions to this repository are welcome! If you have a new solution or want to improve existing ones, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/improvement`).
+3. Make your changes and commit them (`git commit -am 'Add new solution'`).
+4. Push to the branch (`git push origin feature/improvement`).
+5. Create a new Pull Request.
+
+Please ensure that your code follows the repository's coding standards and includes appropriate documentation.
+
+## License
+
+This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+Happy Coding! 🚀
+
 
 
