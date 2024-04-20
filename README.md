@@ -34,3 +34,14 @@ Each category contains solutions to multiple problems with detailed explanations
 
 The repository follows a structured format to organize problem solutions:
 
+- Arrays_and_Strings
+  - Two_Sum
+    - solution.py
+  - Container_With_Most_Water
+    - solution.java
+    - explanation.md
+  - Longest_Substring_Without_Repeating_Characters
+    - solution.cpp
+    - README.md
+
+
