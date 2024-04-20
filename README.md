@@ -11,7 +11,7 @@ This repository is created to help aspiring software engineers and developers pr
 
 The problems in this repository are categorized into the following sections:
 
-- Arrays and Strings
+- Array
 - Linked Lists
 - Trees and Graphs
 - Sorting and Searching
@@ -35,11 +35,6 @@ Contributions to this repository are welcome! If you have a new solution or want
 
 Please ensure that your code follows the repository's coding standards and includes appropriate documentation.
 
-## License
-
-This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
-
----
 
 Happy Coding! 🚀
 
