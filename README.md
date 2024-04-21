@@ -18,7 +18,7 @@ The problems in this repository are categorized into the following sections:
 - Linked Lists
 - Trees
 - Graphs
-- Binary Searching
+- Binary Search
 - Dynamic Programming
 - Queue/Heap
 - Trie
