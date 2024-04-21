@@ -4,7 +4,7 @@ This repository contains solutions to various Data Structures and Algorithms (DS
 
 ## About
 
-This repository is created to help aspiring software engineers and developers prepare for technical interviews. It includes solutions to problems from platforms like LeetCode, HackerRank, and Codeforces, organized by problem categories for easy navigation and reference.
+This repository is created to help aspiring software engineers and developers prepare for technical interviews. It includes solutions to problems from platforms like LeetCode, HackerRank, and Codeforces, organized by problem categories.
 
 
 ## Problem Categories
