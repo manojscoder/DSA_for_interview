@@ -1,6 +1,6 @@
 // Time: O(n)
 // Space: O(1)
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+// Problem link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
 class Solution {
     public int maxProfit(int[] prices) {
