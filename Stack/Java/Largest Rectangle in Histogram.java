@@ -6,7 +6,6 @@ class Solution {
     public int largestRectangleArea(int[] heights) {
         Stack<Pair<Integer, Integer>> stack = new Stack<>();
         int len = heights.length, result = 0, prev_index;
-
         for(int i = 0; i < len; i++){
             prev_index = i;
             while(!stack.isEmpty() && stack.peek().getKey() > heights[i]){
