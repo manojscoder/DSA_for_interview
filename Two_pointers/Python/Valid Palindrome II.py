@@ -1,5 +1,5 @@
-# Time:
-# Space:
+# Time: O(n)
+# Space: O(1)
 # Problem link: https://leetcode.com/problems/valid-palindrome-ii/description/
 class Solution:
     def validPalindrome(self, s: str) -> bool:
