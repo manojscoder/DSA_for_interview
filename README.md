@@ -27,7 +27,7 @@ The problems in this repository are categorized into the following sections:
 - Bit Manipulation
 - Math and Geometry
 
-Each category contains solutions to multiple problems with complexity analysis.
+Each category contains solutions to multiple problems with complexity.
 
 
 ## Contributing
