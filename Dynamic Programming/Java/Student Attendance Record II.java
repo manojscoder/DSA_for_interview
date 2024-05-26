@@ -10,6 +10,7 @@ class Solution {
 
         int MOD = 1000000007, result = 3;
 
+        // Bottom - up approach (DP)
         for(int i = 1; i < n; i++){
             result = 0;
             // for 'P'
