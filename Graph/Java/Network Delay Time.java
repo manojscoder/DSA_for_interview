@@ -13,22 +13,18 @@ class Pair {
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         Map<Integer, List<Pair>> adjList = new HashMap<>();
-        PriorityQueue<Pair> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.time, b.time));
-        Set<Integer> visit = new HashSet<>();
-        int[] dist = new int[n + 1];
-        int u, v, time, result = -1;
+        int u, v, t, result = 0;
 
         for(int i = 0; i < times.length; i++) {
             u = times[i][0];
             v = times[i][1];
-            time = times[i][2];
-
+            t = times[i][2];
             adjList.putIfAbsent(u, new ArrayList<>());
-            adjList.get(u).add(new Pair(time, v));
+            adjList.get(u).add(new Pair(t, v));
         }
 
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        dist[k] = 0;
+        PriorityQueue<Pair> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.time, b.time));
+        Set<Integer> visit = new HashSet<>();
         minHeap.add(new Pair(0, k));
 
         while(!minHeap.isEmpty()) {
@@ -37,23 +33,20 @@ class Solution {
             if(visit.contains(temp.node))
                 continue;
             visit.add(temp.node);
+            result = Math.max(result, temp.time);
 
             if(adjList.containsKey(temp.node)) {
-                for(Pair store : adjList.get(temp.node)) {
-                    if(store.time + temp.time < dist[store.node]) {
-                        dist[store.node] = store.time + temp.time;
-                        minHeap.add(new Pair(store.time + temp.time, store.node));
+                for(Pair pair : adjList.get(temp.node)) {
+                    if(!visit.contains(pair.node)) {
+                        minHeap.add(new Pair(temp.time + pair.time, pair.node));
                     }
                 }
             }
         }
 
-        for(int i = 1; i < n + 1; i++) {
-            if(dist[i] == Integer.MAX_VALUE)
-                return -1;
-            result = Math.max(result, dist[i]);
-        }
-        
-        return result;
+        if(visit.size() == n)
+            return result;
+        return -1;
+
     }
 }
