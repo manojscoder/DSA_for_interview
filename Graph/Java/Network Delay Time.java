@@ -1,4 +1,6 @@
 // Problem link: https://leetcode.com/problems/network-delay-time/description/
+
+// Approach 1: Dijkstras
 // Time: O(E log V)
 // Space: O(V + E)
 class Pair {
@@ -48,5 +50,39 @@ class Solution {
             return result;
         return -1;
 
+    }
+}
+
+
+// Approach 2: Bellman ford
+// Time: O(E * V)
+// Space: O(V)
+class Solution {
+    public int networkDelayTime(int[][] times, int n, int k) {
+        int[] dist = new int[n + 1];
+
+        for(int i = 0; i <= n; i++) 
+            dist[i] = Integer.MAX_VALUE;
+        dist[k] = 0;
+        int u, v, time, result = -1;
+
+        for(int i = 0; i < n - 1; i++) {
+            for(int j = 0; j < times.length; j++) {
+                u = times[j][0];
+                v = times[j][1];
+                time = times[j][2];
+
+                if(dist[u] != Integer.MAX_VALUE && dist[u] + time < dist[v])
+                    dist[v] = dist[u] + time;
+            }
+        }
+
+        for(int i = 1; i <= n; i++) {
+            if(dist[i] == Integer.MAX_VALUE)
+                return -1;
+            result = Math.max(result, dist[i]);
+        }
+
+        return result;
     }
 }
