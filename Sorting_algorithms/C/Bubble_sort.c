@@ -2,6 +2,8 @@
 // Best: O(n)
 // Average: O(n ^ 2)
 // Worst: O(n ^ 2)
+
+// Space: O(1)
 void bubbleSort(int* arr, int n) {
     
     for(int i = 0; i < n - 1; i++) {
