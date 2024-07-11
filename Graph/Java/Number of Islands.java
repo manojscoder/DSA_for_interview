@@ -1,3 +1,5 @@
+// Problem link: https://leetcode.com/problems/number-of-islands/description/
+
 // Approach: 1 (DFS)
 // Time: O(n * m)
 // Space: o(n * m)
