@@ -5,6 +5,8 @@
 
 # Space: O(1)
 
+
+# Approach: 1
 def insertionSort(arr):
     n = len(arr)
     for i in range(1, n):
@@ -14,3 +16,16 @@ def insertionSort(arr):
             j -= 1
     
     return arr
+
+
+# Approach: 2
+def insertionSort(arr, n):
+    for idx in range(1, n):
+        val, j = arr[idx], idx - 1
+        
+        while j >= 0 and arr[j] > val:
+            arr[j + 1], j = arr[j], j - 1
+        
+        arr[j + 1] = val
+    return arr
+        
