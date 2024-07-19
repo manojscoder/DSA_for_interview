@@ -5,9 +5,9 @@
 
 // Space: O(1)
 
-private int linearSearch(int[] arr, int key) {
+int linearSearch(int* arr, int key, int len) {
   
-  for(int idx = 0; idx < arr.length; idx++) {
+  for(int idx = 0; idx < len; idx++) {
     if(key == arr[idx]) {
       return idx;
     }
