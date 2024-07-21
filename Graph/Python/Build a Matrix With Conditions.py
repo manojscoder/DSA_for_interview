@@ -1,6 +1,6 @@
 # Problem link: https://leetcode.com/problems/build-a-matrix-with-conditions/description/
-# Time: O(k)
-# Space: O(k)
+# Time: O(k * k)
+# Space: O(k * k)
 
 class Solution:
     def buildMatrix(self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]) -> List[List[int]]:
