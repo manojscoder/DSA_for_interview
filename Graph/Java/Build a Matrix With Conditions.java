@@ -1,6 +1,6 @@
 // Problem link: https://leetcode.com/problems/build-a-matrix-with-conditions/description/
-// Time: O(k)
-// Space: O(k)
+// Time: O(k * k)
+// Space: O(k * k)
 
 class Solution {
     public int[][] buildMatrix(int k, int[][] rowConditions, int[][] colConditions) {
