@@ -2,6 +2,7 @@
 // Time: O(k * k)
 // Space: O(k * k)
 
+// Approach: DFS
 class Solution {
     public int[][] buildMatrix(int k, int[][] rowConditions, int[][] colConditions) {
         
@@ -68,5 +69,69 @@ class Solution {
         result[result[result.length - 1]--] = node;
 
         return false;
+    }
+}
+
+
+
+// BFS
+class Solution {
+    public int[][] buildMatrix(int k, int[][] rowConditions, int[][] colConditions) {
+        
+        List<Integer> rowOrder = this.topoSort(rowConditions, k);
+        List<Integer> colOrder = this.topoSort(colConditions, k);
+
+        if(rowOrder.size() != k || colOrder.size() != k) {
+            return new int[][] {};
+        }
+
+        int[][] result = new int[k][k];
+        int[] rowIdx = new int[k + 1], colIdx = new int[k + 1];
+
+        for(int idx = 0; idx < k; idx++) {
+            rowIdx[rowOrder.get(idx)] = idx;
+            colIdx[colOrder.get(idx)] = idx;
+        }
+
+        for(int idx = 1; idx <= k; idx++) {
+            result[rowIdx[idx]][colIdx[idx]] = idx;
+        }
+
+        return result;
+    }
+
+    private List<Integer> topoSort(int[][] edges, int num) {
+        int[] indegree = new int[num];
+        Queue<Integer> queue = new LinkedList<>();
+        List<Integer> order = new ArrayList<>();
+        List<Integer>[] adjList = new ArrayList[num + 1];
+        for(int idx = 1; idx <= num; idx++) {
+            adjList[idx] = new ArrayList<>();
+        }
+        
+        for(int[] pair : edges) {
+            adjList[pair[0]].add(pair[1]);
+            indegree[pair[1] - 1] += 1;
+        }
+
+        for(int idx = 0; idx < indegree.length; idx++) {
+            if(indegree[idx] == 0) {
+                queue.offer(idx + 1);
+            }
+        }
+
+        while(!queue.isEmpty()) {
+            int node = queue.poll();
+            order.add(node);
+
+            for(int ver : adjList[node]) {
+                indegree[ver - 1] -= 1;
+                if(indegree[ver - 1] == 0) {
+                    queue.offer(ver);
+                }
+            }
+        }
+
+        return order;
     }
 }
