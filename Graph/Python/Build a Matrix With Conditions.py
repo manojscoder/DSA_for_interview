@@ -2,6 +2,7 @@
 # Time: O(k * k)
 # Space: O(k * k)
 
+# Approach: DFS
 class Solution:
     def buildMatrix(self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]) -> List[List[int]]:
 
@@ -50,3 +51,52 @@ class Solution:
         result.append(node)
 
         return False
+
+# Approach: BFS
+class Solution:
+    def buildMatrix(self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]) -> List[List[int]]:
+        rowIndex = self.topoSort(rowConditions, k)
+        colIndex = self.topoSort(colConditions, k)
+
+        if len(rowIndex) != k or len(colIndex) != k:
+            return []
+
+        result = [[0] * k for _ in range(k)]
+        indicesDetails = {}
+
+        for idx in range(len(rowIndex)):
+            indicesDetails[rowIndex[idx]] = idx
+
+        for idx in range(len(colIndex)):
+            result[indicesDetails[colIndex[idx]]][idx] = colIndex[idx]
+        
+        return result
+    
+
+    def topoSort(self, edges, totalNodes):
+        indegree, topoOrder = [0] * (totalNodes), []
+        adjList = {}
+        
+        for u, v in edges:
+            if u not in adjList:
+                adjList[u] = []
+            adjList[u].append(v)
+            indegree[v - 1] += 1
+        
+        queue, visit = deque(), set()
+        
+        for idx in range(len(indegree)):
+            if indegree[idx] == 0:
+                queue.append(idx + 1)
+        
+        while queue:
+            node = queue.popleft()
+            topoOrder.append(node)
+            
+            if node in adjList:
+                for ver in adjList[node]:
+                    indegree[ver - 1] -= 1
+                    if indegree[ver - 1] == 0:
+                        queue.append(ver)
+        
+        return topoOrder
