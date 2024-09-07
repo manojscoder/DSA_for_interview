@@ -1,6 +1,6 @@
 // Problem link: https://leetcode.com/problems/linked-list-in-binary-tree/description
 // Time: O(n * m)
-// Space: O(n * m)
+// Space: O(n + m)
 class Solution {
     public boolean isSubPath(ListNode head, TreeNode root) {
         if(root == null) {
