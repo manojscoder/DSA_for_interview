@@ -5,8 +5,7 @@ class TrieNode:
 
     def __init__(self):
         self.store = [None] * 26
-        self.count = [0] * 26
-        self.isEnd = False
+        self.count = 0
 
 class Trie:
 
@@ -20,18 +19,16 @@ class Trie:
             if not node.store[ord(char) - ord('a')]:
                 node.store[ord(char) - ord('a')] = TrieNode()
 
-            node.count[ord(char) - ord('a')] += 1
+            node.store[ord(char) - ord('a')].count += 1
             node = node.store[ord(char) - ord('a')]
-            
-        
-        node.isEnd = True
+
     
     def prefixCount(self, word):
         result = 0
         node = self.root
 
         for char in word:
-            result += node.count[ord(char) - ord('a')]
+            result += node.store[ord(char) - ord('a')].count
             node = node.store[ord(char) - ord('a')]
         
         return result
