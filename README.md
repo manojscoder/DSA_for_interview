@@ -17,6 +17,7 @@ The problems in this repository are categorized into the following sections:
 - Stack
 - Linked Lists
 - Trees
+- Segment Tree
 - Graphs
 - Binary Search
 - Dynamic Programming
