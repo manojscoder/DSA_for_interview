@@ -3,19 +3,19 @@
 // Space: O(n)
 class Solution {
     public int maxWidthRamp(int[] nums) {
-        int[] store = new int[nums.length + 1];
-        int result = 0, left = 0, right = 1;
+        Stack<Integer> stack = new Stack<>();
+        int result = 0;
 
-        for(int idx = nums.length - 1; idx >= 0; idx--) {
-            store[idx] = Math.max(store[idx + 1], nums[idx]);
+        for(int idx = 0; idx < nums.length; idx++) {
+            if(stack.isEmpty() || nums[stack.peek()] > nums[idx]) {
+                stack.push(idx);
+            }
         }
 
-        while(right < nums.length) {
-            if(store[right] >= nums[left]) {
-                result = Math.max(result, right++ - left);
-            }
-            else {
-                left++;
+        for(int idx = nums.length - 1; idx >= 0; idx--) {
+            while(!stack.isEmpty() && nums[stack.peek()] <= nums[idx]) {
+                result = Math.max(result, idx - stack.peek());
+                stack.pop();
             }
         }
 
