@@ -25,6 +25,7 @@ The problems in this repository are categorized into the following sections:
 - Trie
 - Backtracking
 - Greedy
+- Intervals
 - Bit Manipulation
 - Math and Geometry
 
