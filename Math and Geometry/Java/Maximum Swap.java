@@ -1,5 +1,5 @@
 // Problem link: https://leetcode.com/problems/maximum-swap/description/
-// Time: O(n)
+// Time: O(n log n)
 // Space: O(n)
 class Solution {
     public int maximumSwap(int num) {
