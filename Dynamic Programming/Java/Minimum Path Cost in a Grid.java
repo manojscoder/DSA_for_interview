@@ -1,6 +1,6 @@
 // Problem link: https://leetcode.com/problems/minimum-path-cost-in-a-grid/description/
 // Time: O(n * m ^ 2)
-// Space: O(n * m)
+// Space: O(m)
 class Solution {
     public int minPathCost(int[][] grid, int[][] moveCost) {
         int rows = grid.length, cols = grid[0].length, result = Integer.MAX_VALUE;
