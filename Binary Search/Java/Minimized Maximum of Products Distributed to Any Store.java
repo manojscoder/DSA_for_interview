@@ -22,7 +22,6 @@ class Solution {
 
         return result;
     }
-
     private boolean isPossible(int[] quantities, int n, int diff) {
         int total = 0;
 
