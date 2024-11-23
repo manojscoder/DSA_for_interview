@@ -1,6 +1,6 @@
 # Problem link: https://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows/description
 # Time: O(n * m)
-# space: O(n)
+# space: O(n * m)
 class Solution:
     def maxEqualRowsAfterFlips(self, matrix: List[List[int]]) -> int:
         store = defaultdict(int)
